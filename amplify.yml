@@ -1,20 +1,23 @@
 version: 1
 backend:
   phases:
+    preBuild:
+      commands:
+        - npm i -g bun
     build:
       commands:
-        - npm ci --cache .npm --prefer-offline
+        - bun install --offline --frozen-lockfile
         - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
 frontend:
   phases:
     build:
       commands:
-        - npm run build
+        - bun run build
   artifacts:
     baseDirectory: dist
     files:
       - '**/*'
   cache:
     paths:
-      - .npm/**/*
+      - .bun/**/*
       - node_modules/**/*
