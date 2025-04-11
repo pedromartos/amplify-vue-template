@@ -8,9 +8,11 @@
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build --force"
+    "type-check": "vue-tsc --build --force",
+    "lint": "eslint . --fix"
   },
   "dependencies": {
+    "@aws-amplify/ui-vue": "^4.3.1",
     "@types/bun": "latest",
     "aws-amplify": "^6.6.6",
     "vue": "^3.4.21"
@@ -21,12 +23,17 @@
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.12.5",
     "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.5.0",
     "@vue/tsconfig": "^0.5.1",
     "aws-cdk": "^2.137.0",
     "aws-cdk-lib": "^2.137.0",
     "constructs": "^10.3.0",
     "esbuild": "^0.20.2",
+    "eslint": "^9.24.0",
+    "eslint-plugin-vue": "^10.0.0",
     "npm-run-all2": "^6.1.2",
+    "prettier": "^3.5.3",
     "tsx": "^4.7.2",
     "typescript": "^5.4.5",
     "vite": "^5.4.10",
